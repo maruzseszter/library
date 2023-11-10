@@ -29,7 +29,7 @@ const Login = () => {
         <FormRow type='email' name='email' defaultValue='eszter@gmail.com' />
         <FormRow type='password' name='password' defaultValue='secret_123' />
         <button type='submit' className='btn btn-block' disabled={isSubmitting}>
-          {isSubmitting ? 'submitting' : 'submit'}
+          {isSubmitting ? 'submitting' : 'belépés'}
         </button> 
         <p>
           Még nem vagy tag?
