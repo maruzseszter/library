@@ -1,6 +1,6 @@
 import { FormRow, FormRowSelect } from '../components';
 import Wrapper from '../assets/wrappers/DashboardFormPage';
-//import { useOutletContext } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import { BOOK_STATUS, BOOK_TYPE } from '../../../utils/constants';
 import { Form, useNavigation, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -20,7 +20,7 @@ export const action = async ({ request }) => {
 };
 
 const AddBook = () => {
-  //const { user } = useOutletContext();
+  const { user } = useOutletContext();
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
   return (
