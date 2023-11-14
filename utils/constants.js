@@ -6,8 +6,9 @@ export const BOOK_STATUS = {
   
   export const BOOK_TYPE = {
     LANGUAGE_BOOK: 'nyelvkönyv',
-    LANGUAGE_WORKBOOK: 'nyelvi munkafüzet',
+    FINANCE: 'pénzügy',
     LOGISTICS: 'logisztika',
+    INFORMATICS: 'informatika'
   };
   
   export const BOOK_SORT_BY = {
