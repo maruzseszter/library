@@ -4,8 +4,8 @@ import customFetch from '../utils/customFetch';
 import { useLoaderData } from 'react-router-dom';
 import { useContext, createContext } from 'react';
 
-//export const loader = async ({ request }) => {
-export const loader = async () => {
+export const loader = async ({ request }) => {
+//export const loader = async () => {
   try {
     const { data } = await customFetch.get('/books');
     return { data }
