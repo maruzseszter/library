@@ -1,6 +1,7 @@
 import { body, param, validationResult } from 'express-validator';
 import { BadRequestError, NotFoundError, UnauthorizedError } from '../errors/customErrors.js';
-import { BOOK_STATUS, BOOK_TYPE } from '../utils/constants.js';
+//import { BOOK_STATUS, BOOK_TYPE } from '../utils/constants.js';
+import { BOOK_TYPE } from '../utils/constants.js';
 import mongoose from 'mongoose';
 import Book from '../models/BookModel.js';
 import User from '../models/UserModel.js';
@@ -29,18 +30,21 @@ const withValidationErrors = (validateValues) => {
 };
 
 export const validateBookInput = withValidationErrors([
-  body('cím').notEmpty().withMessage('cím szükséges'),
-  body('author').notEmpty().withMessage('author is required'),
-  body('category').notEmpty().withMessage('category is required'),
-  body('publisher').notEmpty().withMessage('publisher is required'),
-  body('ISBN').notEmpty().withMessage('ISBN is required'),
+  body('cím').notEmpty().withMessage('cím megadása kötelező'),
+  body('szerző').notEmpty().withMessage('szerző megadása kötelező'),
+  body('ISBN').notEmpty().withMessage('ISBN megadása kötelező'),
+  body('kiadó').notEmpty().withMessage('kiadó megadása kötelező'),
+  body('év').notEmpty().withMessage('év megadása kötelező'),
+  body('kategória').notEmpty().withMessage('kategória megadása kötelező'),
+  body('darabszám').notEmpty().withMessage('darabszám megadása kötelező'),
+  
   //body('bookLocation').notEmpty().withMessage('Book location is required'),
-  body('bookStatus')
-    .isIn(Object.values(BOOK_STATUS))
-    .withMessage('invalid status value'),
-  body('bookType')
-    .isIn(Object.values(BOOK_TYPE))
-    .withMessage('invalid type value'),
+  // body('bookStatus')
+  //   .isIn(Object.values(BOOK_STATUS))
+  //   .withMessage('invalid status value'),
+  // body('bookType')
+  //   .isIn(Object.values(BOOK_TYPE))
+  //   .withMessage('invalid type value'),
 ]);
 
 export const validateIdParam = withValidationErrors([

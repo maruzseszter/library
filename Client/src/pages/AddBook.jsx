@@ -1,7 +1,8 @@
 import { FormRow, FormRowSelect } from '../components';
 import Wrapper from '../assets/wrappers/DashboardFormPage';
 import { useOutletContext } from 'react-router-dom';
-import { BOOK_STATUS, BOOK_TYPE } from '../../../utils/constants';
+//import { BOOK_STATUS, BOOK_TYPE } from '../../../utils/constants';
+import { BOOK_TYPE } from '../../../utils/constants';
 import { Form, useNavigation, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
@@ -26,31 +27,32 @@ const AddBook = () => {
   return (
     <Wrapper>
       <Form method='post' className='form'>
-        <h4 className='form-title'>Add book</h4>
+        <h4 className='form-title'>Könyv hozzáadása</h4>
         <div className='form-center'>
           <FormRow type='text' name='cím' />
-          <FormRow type='text' name='author' />
-          <FormRow type='text' name='category' />
-          <FormRow type='text' name='publisher' />
-          <FormRow type='text' name='ISBN' />
+          <FormRow type='text' name='szerző' />
+          <FormRow type='number' name='ISBN' />
+          <FormRow type='text' name='kiadó' />
+          <FormRow type='number' name='év' />
           <FormRowSelect
+            labelText='kategória'
+            name='kategória'
+            list={Object.values(BOOK_TYPE)}
+          />
+          <FormRow type='number' name='darabszám' />
+          {/* <FormRowSelect
             labelText='book status'
             name='bookStatus'
             defaultValue={BOOK_STATUS.NEW}
             list={Object.values(BOOK_STATUS)}
-          />
-          <FormRowSelect
-            labelText='book type'
-            name='bookType'
-            defaultValue={BOOK_TYPE.NEW}
-            list={Object.values(BOOK_TYPE)}
-          />
+          /> */}
+
           <button
             type='submit'
             className='btn btn-block form-btn '
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'submitting' : 'submit'}
+            {isSubmitting ? 'Küldés...' : 'Küldés'}
           </button>
         </div>
       </Form>

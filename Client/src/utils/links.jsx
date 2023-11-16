@@ -8,7 +8,7 @@ import { MdAdminPanelSettings } from 'react-icons/md';
 
 const links = [
     {
-        text: 'add book',
+        text: 'Könyv Felvétele'.replace('Felvétele', 'felvétele'),
         path: '.',
         icon: <BiBookAdd />
     },
@@ -18,7 +18,7 @@ const links = [
         icon: <MdQueryStats />
     },
     {
-        text: 'stats',
+        text: 'készletjelentés',
         path: 'stats',
         icon: <IoBarChartSharp />
     },

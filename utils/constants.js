@@ -1,8 +1,8 @@
-export const BOOK_STATUS = {
-    NEW: 'új',
-    USED: 'használt',
-    WASTE: 'selejt',
-  };
+// export const BOOK_STATUS = {
+//     NEW: 'új',
+//     USED: 'használt',
+//     WASTE: 'selejt',
+//   };
   
   export const BOOK_TYPE = {
     LANGUAGE_BOOK: 'nyelvkönyv',

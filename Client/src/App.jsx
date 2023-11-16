@@ -11,12 +11,16 @@ import {
   AllBooks,
   Profile,
   Admin,
+  EditBook,
 } from './pages';
 import { action as registerAction } from './pages/Register';
 import { action as loginAction } from './pages/Login';
 import { loader as dashboardLoader } from './pages/DashboardLayout';
 import { action as addBookAction } from './pages/AddBook';
 import { loader as allBooksLoader } from './pages/AllBooks';
+import { loader as editBookLoader } from './pages/EditBook';
+import { action as editBookAction } from './pages/EditBook';
+import { action as deleteBookAction } from './pages/DeleteBook';
 
 
 export const checkDefaultTheme = () => {
@@ -74,6 +78,15 @@ const router = createBrowserRouter([
           {
             path: 'admin',
             element: <Admin />,
+          },
+          {
+            path: 'edit-book/:id',
+            element: <EditBook />,
+            loader: editBookLoader,
+            action: editBookAction,
+          },
+          {
+            path: 'delete-book/:id', action: deleteBookAction
           },
         ]
       },
