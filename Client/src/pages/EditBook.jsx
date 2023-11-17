@@ -37,13 +37,13 @@ const EditBook = () => {
       <Form method='post' className='form'>
         <h4 className='form-title'>könyv szerkesztése</h4>
         <div className='form-center'>
-          <FormRow type='text' name='cím' defaultValue={book.cím} />
-          <FormRow type='text' name='szerző' defaultValue={book.szerző} />
+          <FormRow type='text' name='title' labelText='cím' defaultValue={book.title} />
+          <FormRow type='text' name='author' labelText='szerző' defaultValue={book.author} />
           <FormRow type='number' name='ISBN' defaultValue={book.ISBN} />
-          <FormRow type='text' name='kiadó' defaultValue={book.kiadó} />
-          <FormRow type='number' name='év' defaultValue={book.év} />
-          <FormRow type='text' name='kategória' defaultValue={book.kategória} />
-          <FormRow type='number' name='darabszám' defaultValue={book.darabszám} />
+          <FormRow type='text' name='publisher' labelText='kiadó' defaultValue={book.publisher} />
+          <FormRow type='number' name='year' labelText='év' defaultValue={book.year} />
+          <FormRow type='text' name='bookType' labelText='kategória' defaultValue={book.bookType} />
+          <FormRow type='number' name='quantity' labelText='darabszám' defaultValue={book.quantity} />
           <button
             type='submit'
             className='btn btn-block form-btn'
