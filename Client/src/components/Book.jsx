@@ -8,32 +8,30 @@ day.extend(advancedFormat);
 
 const Book = ({
   _id,
-  cím,
-  szerző,
-  kategória,
-  kiadó,
+  title,
+  author,
   ISBN,
-  // bookStatus,
-  createdAt,
-  //bookType
+  publisher,
+  year,
+  bookType,
+  quantity,
+  createdAt
 }) => {
   const date = day(createdAt).format('MMM Do, YYYY');
 
   return (
     <Wrapper>
       <header>
-        {/* <div className='main-icon'>{author.charAt(0)}</div> */}
+        <div className='main-icon'>{author.charAt(0)}</div>
         <div className='info'>
-          <h5>{cím}</h5>
-          <p>{szerző}</p>
+          <h5>{title}</h5>
+          <p>{author}</p>
         </div>
       </header>
       <div className='content'>
         <div className='content-center'>
-          <BookInfo icon={<FaLocationArrow />} text={kategória} />
+          <BookInfo icon={<FaLocationArrow />} text={bookType} />
           <BookInfo icon={<FaCalendarAlt />} text={date} />
-          {/* <BookInfo icon={<FaBriefcase />} text={bookType} /> */}
-          {/* <div className={`status ${bookStatus}`}>{bookStatus}</div> */}
         </div>
 
         <footer className='actions'>
