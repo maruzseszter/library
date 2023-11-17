@@ -18,7 +18,7 @@ const links = [
         icon: <MdQueryStats />
     },
     {
-        text: 'készletjelentés',
+        text: 'statisztika',
         path: 'stats',
         icon: <IoBarChartSharp />
     },
